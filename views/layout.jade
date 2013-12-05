@@ -1,17 +1,68 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/normalize.min.css")
-    link(rel='stylesheet', type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/foundation.min.css")
-    link(rel='stylesheet', type="text/css", href='/css/style.css')
-    script(src='http://localhost:35729/livereload.js')
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(charset='utf-8')
-  body
-    block content
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/vendor/custom.modernizr.min.js")
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/vendor/jquery.min.js")
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation.min.js")
-    script.
-        $(document).foundation();
+	head
+		title= title
+		link(rel='stylesheet', type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/normalize.min.css")
+		link(rel='stylesheet', type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/foundation.min.css")
+		link(rel='stylesheet', type="text/css", href='/css/style.css')
+		script(src='http://localhost:35729/livereload.js')
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(charset='utf-8')
+	body
+		.show-for-medium-up
+			nav(class="top-bar", data-topbar)
+				ul.title-area
+					li.name
+						h1
+							a(href="#") OZ Dashboard
+				//- Right Side Navigation
+				section.top-bar-section
+					ul.right
+						li.has-dropdown.active
+							a(href="#") Alerts
+							ul.dropdown
+								li
+									a(href="#") Engine1 is out of fuel
+		//- OffCanvas Menu -- only for medium and small
+		.off-canvas-wrap
+			.inner-wrap
+				nav.tab-bar.show-for-small-only
+					section.left-small
+						a.left-off-canvas-toggle.menu-icon
+							span
+					section.middle.tab-bar-section
+						h1.title OZ Dashboard
+					section.right-small
+						a.right-off-canvas-toggle.menu-icon
+							span
+				//-Off Canvas Menu
+				aside.left-off-canvas-menu
+					ul.off-canvas-list
+						li
+							label Navigation
+						li
+							a Cluster
+						li
+							a Engines
+						li
+							a Alerts
+						li
+							a Controls
+				//-main content goes here
+				section(role="main")
+					.row
+						.large-3.medium-4.columns
+							.hide-for-small
+								.sidebar
+									nav
+										ul.side-nav
+											li
+												h5 Navigation List
+						.large-9.medium-8.columns
+							block content
+				a.exit-off-canvas
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/vendor/custom.modernizr.min.js")
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/vendor/jquery.min.js")
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation.min.js")
+		script.
+			$(document).foundation();
