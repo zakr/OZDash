@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	.show-for-medium-up
+		nav(class="top-bar", data-topbar)
+			ul.title-area
+				li.name
+					h1
+						a(href="#") OZ Dashboard
+			//- Right Side Navigation
+			section.top-bar-section
+				ul.right
+					li.has-dropdown.active
+						a(href="#") Alerts
+						ul.dropdown
+							li
+								a(href="#") Engine1 is out of fuel
